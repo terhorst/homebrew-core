@@ -11,7 +11,8 @@ class Vis < Formula
   depends_on "libtermkey"
 
   def install
-    ENV.append "CFLAGS", "-D VIS_OPEN='\"vis-editor-open\"'", "-D VIS_CLIPBOARD='\"vis-editor-clipboard\"'"
+    ENV.append "CFLAGS", "-D VIS_OPEN='\"vis-editor-open\"'", 
+      "-D VIS_CLIPBOARD='\"vis-editor-clipboard\"'"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
     ["", "-clipboard", "-open"].each do |base|
